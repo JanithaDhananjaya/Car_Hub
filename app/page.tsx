@@ -42,8 +42,6 @@ export default function Home() {
         getCars();
     }, [fuel, year, limit, manufacturer, model]);
 
-    const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-
     return (
         <main className="overflow-hidden">
             <Hero/>
@@ -58,7 +56,7 @@ export default function Home() {
 
                     <div className='home__filter-container'>
                         <CustomFilter title='fuel' options={fuels} setFilter={setFuel}/>
-                        <CustomFilter title='year' options={yearsOfProduction} setFilter={setYear}/>
+                        <CustomFilter title='year' options={yearsOfProduction} setFilter={(value) => setYear(Number(value))}/>
                     </div>
                 </div>
 

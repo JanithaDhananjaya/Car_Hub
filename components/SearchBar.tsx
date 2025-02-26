@@ -3,14 +3,11 @@
 import {SearchManufacturer} from "@/components/index";
 import React, {useState} from "react";
 import Image from "next/image";
-import {useRouter} from "next/navigation";
 
 const SearchBar = ({setManufacturer, setModel}: { setManufacturer: (manufacturer: string) => void, setModel: (model: string) => void }) => {
 
     const [searchManufacturer, setSearchManufacturer] = useState('');
     const [searchModel, setSearchModel] = useState('');
-
-    const router = useRouter();
 
     const SearchButton = ({otherClasses}: { otherClasses: string }) => {
         return (
